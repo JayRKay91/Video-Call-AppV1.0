@@ -1,0 +1,40 @@
+{
+  "name": "video-call-app",
+  "version": "1.0.0",
+  "description": "Standalone Video Calling Application",
+  "main": "main.js",
+  "author": "Jordan",
+  "license": "ISC",
+  "type": "commonjs",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.jordan.videocall",
+    "productName": "JordanVideoCall",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Jordan Video Call"
+    }
+  },
+  "dependencies": {
+    "socket.io-client": "^4.8.3"
+  },
+  "devDependencies": {
+    "electron": "^34.0.1",
+    "electron-builder": "^26.7.0"
+  }
+}
